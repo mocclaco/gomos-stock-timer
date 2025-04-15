@@ -15,9 +15,9 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install yfinance notion-client
+        run: pip install yfinance requests
       - name: Run stock timer
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
-        run: python main.py
+        run: python main_ntn.py
